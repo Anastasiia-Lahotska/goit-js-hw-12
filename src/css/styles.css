@@ -112,7 +112,7 @@ button.search:hover {
 }
 
 .load-more {
-  display: none;
+  display: block;
   width: 125px;
   height: 40px;
   background-color: #4e75ff;
@@ -132,7 +132,7 @@ button.search:hover {
 }
 
 .load-more.hidden {
-  display: block;
+  display: none;
 }
 
 @keyframes spin {
