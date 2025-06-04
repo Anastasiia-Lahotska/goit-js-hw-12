@@ -52,6 +52,9 @@ form.addEventListener('submit', async e => {
     }
 
     createGallery(data.hits);
+    if (totalHits > currentPage * 15) {
+      showLoadMoreButton();
+    }
 
   } catch (err) {
     hideLoader();
@@ -64,7 +67,7 @@ form.addEventListener('submit', async e => {
 });
 
 loadMoreBtn.addEventListener('click', async () => {
-  currentPage += 1;
+  currentPage++;
   showLoader();
   hideLoadMoreButton();
 
@@ -77,7 +80,7 @@ loadMoreBtn.addEventListener('click', async () => {
       .querySelector('.gallery-item')
       .getBoundingClientRect();
     window.scrollBy({
-      top: cardHeight * 4,
+      top: cardHeight * 2,
       behavior: 'smooth',
     });
 
